@@ -1,0 +1,409 @@
+*{
+    box-sizing: border-box;
+}
+
+/* ...header part.... */
+#header-list{
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+#header-list li{
+    margin: 0px 15px;
+}
+
+a{
+    font-weight: 900;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    letter-spacing: 0.1rem;
+}
+
+a:hover{
+    color: #e92e09;
+}
+
+#header{
+ font-weight:800;
+ padding:20px 20px;
+ display: flex;
+ align-items: center;
+ justify-content:space-between;
+ position: fixed;
+ width: 100%;
+ z-index: 100;
+ top: 0;
+ left: 0;
+}
+
+#btn{
+    color: white;
+    background-color:#ff5a5f;
+    padding: 12px;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    font-weight: 700;
+    margin-left: 20px;
+}
+button:hover{
+    background-color: rgb(234, 11, 11);
+}
+#btn:active{
+    color: red;
+    background-color: black;
+}
+#login{
+   padding-right: 20px;
+}
+#header-last{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    margin-left: 30px
+}
+/* ..common for all sections */
+section:nth-child(2n){
+	background-color:#f0f0f0;
+}
+
+section:nth-child(2n+1){
+  background-color: white;
+}
+/* ....section one.... */
+#section-heading h1{
+position: absolute;
+top: 100px;
+font-size: 90px;
+line-height: 1;
+}
+#word-1{
+    font-weight:900;
+    display: block;
+    text-decoration:underline red ;
+}
+#word-2{
+ font-weight: 300;
+ display: block;
+ text-decoration:underline rgb(48, 151, 117) ;
+}
+#section-1{
+    background-image: url("image/banner.jpg");
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    padding-top: 400px;
+    width: 100%;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    padding: 70px 30px;
+}
+#para{
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: rgb(245, 197, 6);
+}
+#section-heading{
+    margin-bottom: 70px;
+}
+
+/* ....input field...... */
+#search{
+    padding: 1rem 1.25rem;
+    height: auto;
+    max-width:50%;
+    min-width: 50%;
+    border: 2px solid white;
+    background-color:white;
+}
+#search label{
+    font-weight: 600;
+    font-size: 16px;
+}
+#search input{
+    width: 100%;
+    padding: 10px 16px 10px 0px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    font-weight: 100;
+}
+#search-box{
+    display: flex;
+}
+
+/*.....input field search btn ... */
+#btnn{
+    font-size: 20px;
+    padding: 2rem;
+    color: white;
+    width: 100%;
+    background-color:#ff5a5f;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 30px;
+  }
+  #btnn i{
+    margin-right: 10px;
+  }
+  #btnn:hover{
+    background-color: rgb(234, 11, 11);
+}
+
+/* ... animation property... */
+#word-1,#para{
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 200%;
+      width: 200%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  #word-2 {
+    animation: 3s anim-lineUp ease-out;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateX(-80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(20%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+
+/* .....section 2......*/
+#font-light{
+    font-weight: lighter;
+}
+#font-bold{
+    font-weight: bolder;
+}
+#mb{
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+.d-flex{
+    display: flex;
+}
+.pb-6{
+    padding-bottom: 2rem;
+}
+.ml-auto{
+    margin-left: auto;
+}
+.pl-5{
+    padding-left: 1.5rem;
+}
+
+/* ...category card slider...... */
+.wrapper {
+    margin-top: 1.5rem;
+    display: flex;
+  }
+  .wrapper {
+    max-width: 1200px;
+    width: 100%;
+  }
+  .arrow i {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 50px;
+    background: hsl(0, 34%, 71%);
+    border-radius: 50%;
+    transition: transform 0.1s linear;
+  }
+  .arrow:not(:last-child){
+    margin-right: 30px;
+}
+  .wrapper .carousel{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 4) - 10px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+   
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    height: 320px;
+    list-style: none;
+    background: #2fb96f;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+  }
+  .carousel .card .img {
+    background: #bdd318;
+    height: 280px;
+  }
+  .card .img img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+  }
+  .carousel .card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    text-align: center;
+    margin: 2px 0px 0px;
+  }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+
+/* ....common css for remain section..... */
+  .pt-5{
+    padding-top: 1.5rem;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .mb-4{
+    margin-bottom: 1.25rem;
+  }
+  .col-md-4{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .button{
+    display: inline-block;
+    cursor: pointer;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: center;
+    height: 83px;
+    font-size: 18px;
+    width: 100%;
+    line-height: 1.3;
+    transition: all .2s;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid grey;
+    padding: 0.375rem 0.75rem;
+  }
+
+@media screen and (min-width: 992px) {
+.col-lg-3 {
+       flex: 0 0 25%;
+       max-width: 25%;
+}
+}
+@media screen and (min-width: 768px) {
+.col-lg-3 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+}
+@media screen and (max-width: 576px) {
+.col-lg-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+
+/* ...footer section... */
+.main-footer{
+    padding-top: 6.25rem;
+    padding-bottom:3.125rem;
+}
+.font-size-md{
+    color: #171212;
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* margin-bottom: 1.25rem; */
+    margin-top: 2rem;
+}
+#footer-container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.mb-7{
+    font-size: 1.3rem;
+    margin-bottom: 1.23rem;
+}
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+ul li{
+ list-style-type: none;  
+ padding:0.3125rem 0rem;
+ line-height: 1.625;
+}
+#social i{
+    margin-right:40px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.footer-last{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-around;
+}
